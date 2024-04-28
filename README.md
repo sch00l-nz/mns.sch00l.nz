@@ -1,7 +1,7 @@
 
 # mns.sch00l.nz
 
-A community maintained website to support [https://mns.school.nz](Miramar North School).
+A community maintained website to support [Miramar North School](https://mns.school.nz).
 
 Currently it contains:
 - an overview of digital tools (for new parents!)
