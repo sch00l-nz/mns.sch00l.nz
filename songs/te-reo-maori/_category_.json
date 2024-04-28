@@ -1,8 +1,8 @@
 {
   "label": "Te Reo Māori",
-  "position": 2,
+  "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "Songs in in Te Reo Māori"
+    "description": "Songs in Te Reo Māori"
   }
 }
