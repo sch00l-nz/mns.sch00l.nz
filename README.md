@@ -37,11 +37,10 @@ Any valid updates to the `main` branch will be deployed automatically.
 
 ## Roadmap
 
-- [ ] rasterize the svg text
-  - record the font used somewhere
+SONGS
+
 - [ ] enter more songs
-- [ ] add a "Contributing" page
-- [ ] Improve songs templates
+- [ ] song template
   - [ ] swizzle components? https://docusaurus.io/docs/swizzling/
     - add new front-matter fields?
   - [ ] better multi-line formatting support
@@ -49,3 +48,15 @@ Any valid updates to the `main` branch will be deployed automatically.
     - `<pre>` styling?
   - [ ] nicer translation support
 - [ ] drop awkward `songs/index.md`
+
+TOOLS
+
+- [ ] add all the tools
+- [ ] tool template
+  - see if can modify the frontmatter of these too, auto-render the app store badges / links
+
+MISC
+
+- [ ] rasterize the svg text
+- [ ] record the font used somewhere
+- [ ] add a "Contributing" page
