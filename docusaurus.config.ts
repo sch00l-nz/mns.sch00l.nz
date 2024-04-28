@@ -15,8 +15,9 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "sch00l.nz", // Usually your GitHub org/user name.
-  projectName: "mns", // Usually your repo name.
+  organizationName: "sch00l-nz", // Usually your GitHub org/user name.
+  projectName: "mns.school.nz", // Usually your repo name.
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
