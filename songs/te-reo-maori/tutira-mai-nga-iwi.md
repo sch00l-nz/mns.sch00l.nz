@@ -1,5 +1,6 @@
-# Tutira mai nga iwi
+# Tūtira mai ngā iwi
 
+<pre>
 Tūtira mai ngā iwi,
 tātou tātou e
 Tūtira mai ngā iwi,
@@ -13,9 +14,10 @@ Tātou tātou e
 
 Tā-tou tā-tou e E!!
 Hi aue hei !!!
+</pre>
 
-## English Translation
-
+**English Translation**
+<pre>
 Line up together people
 All of us, all of us
 Stand in rows people
@@ -28,3 +30,4 @@ All of us, all of us
 
 All of us, All of us!!
 Hi aue hei !!!
+</pre>

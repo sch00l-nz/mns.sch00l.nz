@@ -39,10 +39,10 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           editUrl: "https://github.com/sch00l-nz/mns.sch00l.nz/tree/main/",
         },
-        blog: {
-          showReadingTime: true,
-          editUrl: "https://github.com/sch00l-nz/mns.sch00l.nz/tree/main/",
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   editUrl: "https://github.com/sch00l-nz/mns.sch00l.nz/tree/main/",
+        // },
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -114,7 +114,7 @@ const config: Config = {
           items: [
             {
               label: "About",
-              href: "https://sch00l.nz",
+              href: "/info/about",
             },
           ],
         },
@@ -123,7 +123,7 @@ const config: Config = {
           items: [
             {
               label: "Tools",
-              to: "/docs/tools",
+              to: "/info/category/tools",
             },
             {
               label: "Songs",
@@ -135,7 +135,7 @@ const config: Config = {
           title: "More",
           items: [
             {
-              label: "GitHub",
+              label: "Edit",
               href: "https://github.com/sch00l-nz/mns.sch00l.nz",
             },
           ],
