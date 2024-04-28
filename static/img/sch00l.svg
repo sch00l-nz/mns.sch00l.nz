@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   sodipodi:docname="sch00l.svg"
+   width="160mm"
+   height="40mm"
+   viewBox="0 0 160 40"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.91591556"
+     inkscape:cx="-239.65091"
+     inkscape:cy="363.02473"
+     inkscape:window-width="2560"
+     inkscape:window-height="1393"
+     inkscape:window-x="0"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     height="10mm" />
+  <defs
+     id="defs2">
+    <rect
+       x="68.408936"
+       y="328.08966"
+       width="646.41107"
+       height="198.48557"
+       id="rect25057" />
+    <rect
+       x="37.168816"
+       y="381.40854"
+       width="699.46082"
+       height="163.68219"
+       id="rect6633" />
+    <font
+       horiz-adv-x="1024"
+       id="font88476"
+       inkscape:label="font 1"
+       horiz-origin-x="0"
+       horiz-origin-y="0"
+       vert-origin-x="512"
+       vert-origin-y="768"
+       vert-adv-y="1024">
+      <font-face
+         units-per-em="1024"
+         id="font-face88478"
+         font-family="Mukti" />
+      <missing-glyph
+         d="M0,0h1000v1024h-1000z"
+         id="missing-glyph88480" />
+    </font>
+    <rect
+       x="68.408936"
+       y="328.08966"
+       width="646.41107"
+       height="198.48557"
+       id="rect25057-3" />
+    <rect
+       x="68.408936"
+       y="328.08966"
+       width="646.41107"
+       height="198.48557"
+       id="rect25057-35" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text6631"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:192px;line-height:1.25;font-family:KacstQurn;-inkscape-font-specification:KacstQurn;white-space:pre;shape-inside:url(#rect6633);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="37.167969"
+         y="708.72621"
+         id="tspan46040"><tspan
+           dx="0 33.854145 37.239559 40.104141 33.932281 33.932266"
+           style="font-size:53.3333px"
+           id="tspan46038">SCH00L</tspan></tspan></text>
+    <g
+       id="g27863"
+       transform="translate(-17.987258,-84.72427)">
+      <path
+         class="st0"
+         d="m 122.67206,89.222536 h -3.72662 L 94.59649,120.31968 h 3.789575 z"
+         id="path206647-62"
+         style="fill:#c60000;stroke-width:0.125899" />
+      <path
+         class="st0"
+         d="m 151.11224,88.846765 h -3.72662 l -24.34895,31.097145 h 3.78957 z"
+         id="path206647-7-9"
+         style="fill:#c60000;stroke-width:0.125899" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,5.4276717,1.9358862)"
+         id="text25055-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.333px;line-height:1;font-family:KacstQurn;-inkscape-font-specification:KacstQurn;letter-spacing:4px;word-spacing:0px;white-space:pre;shape-inside:url(#rect25057-35);fill:#000000;fill-opacity:1;stroke:none"
+         x="68.408203"
+         y="429.39166"><tspan
+           x="68.408203"
+           y="431.79328"
+           id="tspan46044"><tspan
+             style="font-family:athena;-inkscape-font-specification:athena"
+             id="tspan46042">SCHOOL</tspan></tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.15932219,-1.7920484,106.04122)"
+       id="text204005"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.333px;line-height:1;font-family:KacstQurn;-inkscape-font-specification:KacstQurn;letter-spacing:4px;word-spacing:0px;white-space:pre;shape-inside:url(#rect25057);fill:#000000;fill-opacity:1;stroke:none"
+       x="68.408203"
+       y="429.39166" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="134.97311"
+       y="77.979424"
+       id="text43323"><tspan
+         sodipodi:role="line"
+         id="tspan43321"
+         style="stroke-width:0.264583"
+         x="134.97311"
+         y="77.979424" /></text>
+  </g>
+</svg>
