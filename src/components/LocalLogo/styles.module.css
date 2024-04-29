@@ -1,0 +1,7 @@
+.container {
+  display: grid;
+}
+
+.logo {
+  max-width: 50vw;
+}

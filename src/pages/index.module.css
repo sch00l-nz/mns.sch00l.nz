@@ -21,3 +21,9 @@
   align-items: center;
   justify-content: center;
 }
+
+main {
+  display: grid;
+  justify-content: center;
+  padding-top: 2rem;
+}

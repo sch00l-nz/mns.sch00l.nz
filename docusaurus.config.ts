@@ -4,7 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "Miramar North School",
-  tagline: "community run page",
+  tagline: "community page",
   favicon: "img/sch00l-favicon.ico",
 
   // Set the production url of your site here
