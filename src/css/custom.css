@@ -29,3 +29,14 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+pre {
+  font-family: "sans serif";
+  font-size: 14px;
+  line-height: 22px;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 22px;
+}
