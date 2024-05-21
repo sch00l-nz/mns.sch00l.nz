@@ -85,6 +85,10 @@ const config: Config = {
           label: "Songs",
           to: "/songs",
         },
+        {
+          label: "Contribute",
+          to: "/info/contribute",
+        },
 
         // {
         //   label: 'Tutorial',
@@ -129,6 +133,10 @@ const config: Config = {
             {
               label: "Songs",
               to: "/songs",
+            },
+            {
+              label: "Contribute",
+              to: "/info/contribute",
             },
           ],
         },
