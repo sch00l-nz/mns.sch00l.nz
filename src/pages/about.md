@@ -3,6 +3,8 @@ title: About
 position: 1,
 ---
 
+# About
+
 This is a community maintained site to complement + support [mns.school.nz](https://mns.school.nz).
 
 When my daughter started at MNS I found the array of ways to school communicates a bit overwhelming. Pretty soon my daughter was singing beautiful songs ... and I couldn't sing along because I didn't know the words.
@@ -27,7 +29,7 @@ The domain name `mns.sch00l.nz` is tweak on `mns.school.nz`, which is a nod to t
 ## Contributors
 
 
-![](./assets/mixmix.png)
+![](./mixmix.png)
 
 _Hi my name is Mix. I'm a parent, programmer, and community organizer._
 

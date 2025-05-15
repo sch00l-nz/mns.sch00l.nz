@@ -75,7 +75,7 @@ const config: Config = {
       items: [
         {
           label: "About",
-          to: "/info/about",
+          to: "/about",
         },
         {
           label: "Songs",
@@ -83,11 +83,11 @@ const config: Config = {
         },
         {
           label: "Newsletter",
-          to: "/info/newsletter",
+          to: "/newsletter",
         },
         {
           label: "Contribute",
-          to: "/info/contribute",
+          to: "/contribute",
         },
         {
           label: "Apps",
@@ -123,7 +123,7 @@ const config: Config = {
           items: [
             {
               label: "About",
-              href: "/info/about",
+              href: "/about",
             },
           ],
         },
@@ -131,16 +131,16 @@ const config: Config = {
           title: "Resources",
           items: [
             {
-              label: "Apps",
-              to: "/info/category/apps",
-            },
-            {
               label: "Songs",
               to: "/songs",
             },
             {
               label: "Contribute",
-              to: "/info/contribute",
+              to: "/contribute",
+            },
+            {
+              label: "Apps",
+              to: "/info/category/apps",
             },
           ],
         },
