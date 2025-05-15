@@ -1,6 +1,6 @@
 ---
 title: Contribute
-position: 3,
+position: 5
 ---
 
 This page is a collection point for ways you could contribute to the school community.

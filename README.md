@@ -49,7 +49,7 @@ SONGS
   - [ ] nicer translation support
 - [ ] drop awkward `songs/index.md`
 
-TOOLS
+APPS
 
 - [ ] add all the tools
 - [ ] tool template

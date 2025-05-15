@@ -78,16 +78,20 @@ const config: Config = {
           to: "/info/about",
         },
         {
-          label: "Tools",
-          to: "/info/category/tools",
-        },
-        {
           label: "Songs",
           to: "/songs",
         },
         {
+          label: "Newsletter",
+          to: "/info/newsletter",
+        },
+        {
           label: "Contribute",
           to: "/info/contribute",
+        },
+        {
+          label: "Apps",
+          to: "/info/category/apps",
         },
 
         // {
@@ -127,8 +131,8 @@ const config: Config = {
           title: "Resources",
           items: [
             {
-              label: "Tools",
-              to: "/info/category/tools",
+              label: "Apps",
+              to: "/info/category/apps",
             },
             {
               label: "Songs",
