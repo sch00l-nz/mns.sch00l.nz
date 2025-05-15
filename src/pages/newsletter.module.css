@@ -1,0 +1,32 @@
+.app {
+  max-width: 1200px;
+  padding: 1rem;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 1rem;
+  /* align-items: start; */
+}
+
+.articlesContainer {
+  display: grid;
+  grid-gap: 2rem;
+  min-height: 200px;
+}
+
+.contents {
+  min-width: 200px;
+  max-width: 300px;
+  min-height: 200px;
+
+  .nav-card {
+    padding: 1rem;
+    background: white;
+
+    position: sticky;
+    top: 1rem;
+  }
+
+}
+
