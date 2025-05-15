@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 // import clsx from "clsx";
+import {useLocation} from '@docusaurus/router';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
@@ -15,7 +16,8 @@ export default function Newsletter(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   const [ articles, setArticles ] = useState([])
 
-  const id = new URLSearchParams(window.location.search).get("id")
+  const location = useLocation()
+  const id = new URLSearchParams(location.search).get("id")
 
   // https://hail.to/api/v1/publications/Won0dtG/articles
   // fetch(
