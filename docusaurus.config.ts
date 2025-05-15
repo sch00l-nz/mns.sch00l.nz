@@ -61,6 +61,7 @@ const config: Config = {
         editUrl: "https://github.com/sch00l-nz/mns.sch00l.nz/tree/main/",
       },
     ],
+    require.resolve('docusaurus-plugin-image-zoom')
   ],
 
   themeConfig: {
@@ -160,6 +161,16 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+    zoom: {
+      selector: '#app img',
+      background: {
+          light: 'rgb(255, 255, 255)',
+          dark: 'rgb(50, 50, 50)'
+      },
+      config: {
+        // options you can specify via https://github.com/francoischalifour/medium-zoom#usage
+      }
+    }
   } satisfies Preset.ThemeConfig,
 };
 
