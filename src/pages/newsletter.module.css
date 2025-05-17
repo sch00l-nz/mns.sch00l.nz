@@ -4,6 +4,8 @@
   margin: 0 auto;
 }
 
+/* Newsletter Index */
+
 .newsletterOptions {
   margin: 1rem 0;
   display: grid;
@@ -11,13 +13,16 @@
   grid-gap: 1rem;
 }
 
+/* Newsletter View */
+
 .newsletterView {
+  padding-top: 0;
+
   display: grid;
   grid-template-columns: auto 1fr auto;
   justify-content: space-between;
   grid-gap: 1rem;
 }
-
 .publicationContainer {
   min-height: 200px;
   max-width: 800px;
@@ -34,18 +39,40 @@
   max-width: 300px;
   min-height: 200px;
 
-  padding: 6px;
   background: white;
+  padding: 6px 14px 20px;
   border: 1px solid #ccc;
+  margin-bottom: 1rem;
 
   display: grid;
   align-content: start;
   align-self: start;
 
-  .nav-card {
-    padding: 1rem;
-    background: white;
+  ul {
+    padding-left: calc(var(--ifm-list-left-padding) * 0.5);
+
+    li {
+      padding-bottom: 4px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .newsletterView {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
   }
 
+  .publicationContainer {
+    grid-row: 2;
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+
+  .publicationArticlesNav {
+    grid-row: 1;
+    position: initial;
+    max-width: 100%;
+  }
 }
 

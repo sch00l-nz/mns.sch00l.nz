@@ -119,17 +119,21 @@ export default function Newsletter(): JSX.Element {
             </div>
 
             <div className={styles.publicationArticlesNav}>
+              <Heading as="h2">
+                Contents
+              </Heading>
+
+              <ul>
               {
                 articles.map(item => (
-                  <Link
-                    className="nav-card"
-                    to={`#${item.id}`}
-                    key={item.id}
-                  >
-                    {item.title}
-                  </Link>
+                  <li key={item.id}>
+                    <Link to={`#${item.id}`} >
+                      {item.title}
+                    </Link>
+                  </li>
                 ))
               }
+              </ul>
             </div>
           </main>
         </div>
