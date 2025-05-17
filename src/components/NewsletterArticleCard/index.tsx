@@ -36,7 +36,7 @@ export default function NewsletterArticleCard ({ article }: any): JSX.Element {
           {
             gallery.map(item => {
               return (
-                <img src={item.file_2000_url} />
+                <img src={item.file_2000_url} key={item.file_2000_url}/>
               )
             })
           }

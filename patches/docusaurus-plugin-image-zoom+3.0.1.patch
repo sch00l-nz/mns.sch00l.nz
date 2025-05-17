@@ -1,0 +1,44 @@
+diff --git a/node_modules/docusaurus-plugin-image-zoom/lib/zoom.js b/node_modules/docusaurus-plugin-image-zoom/lib/zoom.js
+index a7e1536..c2461a1 100644
+--- a/node_modules/docusaurus-plugin-image-zoom/lib/zoom.js
++++ b/node_modules/docusaurus-plugin-image-zoom/lib/zoom.js
+@@ -34,7 +34,7 @@ export default (function () {
+             zoomObject.detach();
+         }
+         zoomObject = mediumZoom(selector, config);
+-    }, 1000);
++    }, 2500);
+     return {
+         onRouteUpdate() {
+             setTimeout(() => {
+@@ -42,7 +42,7 @@ export default (function () {
+                     zoomObject.detach();
+                 }
+                 zoomObject = mediumZoom(selector, config);
+-            }, 1000);
++            }, 2500);
+         },
+     };
+ })();
+diff --git a/node_modules/docusaurus-plugin-image-zoom/src/zoom.ts b/node_modules/docusaurus-plugin-image-zoom/src/zoom.ts
+index cdb4518..5962e58 100644
+--- a/node_modules/docusaurus-plugin-image-zoom/src/zoom.ts
++++ b/node_modules/docusaurus-plugin-image-zoom/src/zoom.ts
+@@ -57,7 +57,7 @@ export default (function () {
+     }
+ 
+     zoomObject = mediumZoom(selector, config);
+-  }, 1000);
++  }, 2500);
+ 
+   return {
+     onRouteUpdate() {
+@@ -67,7 +67,7 @@ export default (function () {
+         }
+ 
+         zoomObject = mediumZoom(selector, config);
+-      }, 1000);
++      }, 2500);
+     },
+   };
+ })();
