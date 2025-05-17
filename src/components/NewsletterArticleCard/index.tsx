@@ -1,41 +1,66 @@
 import styles from './styles.module.css';
 
-type Article = {
-  id: string;
-  title: string;
-  body: string;
-};
-
 export default function NewsletterArticleCard ({ article }: any): JSX.Element {
   const {
     id,
     hero_image,
+    short_gallery,
     title,
+    author,
     lead,
     body,
   } = article
 
+  const gallery = short_gallery
+    .filter(item =>
+      item.file_2000_url !== hero_image.file_2000_url
+    )
+
   return (
     <section id={id} className={styles.articleCard}>
-      {/*
-      <div
-        className="heroImage"
-        style={{
-          backgroundImage: `url(${hero_image.file_original_url})`,
-          backgroundSize: 'cover',
-          height: 200
-        }}
-      />
-      */}
-      <img className={styles.heroImage} src={hero_image.file_original_url} />
+      {
+        /*
+        <div
+          className={styles.heroImage} 
+          style={{ backgroundImage: `url(${hero_image.file_original_url})` }}
+        />
+        */
+      }
+      <div className={styles.heroImage}>
+        <img src={hero_image.file_original_url} />
+      </div>
+
+      { 
+        gallery.length ? (
+        <div className={styles.gallery}>
+          {
+            gallery.map(item => {
+              return (
+                <img src={item.file_2000_url} />
+              )
+            })
+          }
+        </div>
+
+        ) : null
+      }
 
       <h2>{title}</h2>
+      <div className={styles.author}>{author}</div>
 
-      <div className={styles.lead}
-        dangerouslySetInnerHTML={{__html: lead }}
+      { 
+        lead ? (
+          <div
+            className={styles.lead}
+            dangerouslySetInnerHTML={{__html: lead }}
+          />
+        ) : null
+      }
+
+      <div 
+        className={styles.body}
+        dangerouslySetInnerHTML={{__html: body }}
       />
-
-      <div dangerouslySetInnerHTML={{__html: body }} />
     </section>
   );
 }

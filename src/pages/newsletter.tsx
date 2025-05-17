@@ -101,8 +101,9 @@ export default function Newsletter(): JSX.Element {
       }
 
       {/* Show 1 Newsletter */}
+      {/* NOTE: .newsletter-app is used by a plugin */}
       { id ? (
-        <div className={styles.container}>
+        <div className={`newsletter-app ${styles.container}`}>
           <header>
             <Heading as="h1">
               { title }
