@@ -46,7 +46,7 @@ async function getArticles (id: string) {
 
 export default function Newsletter(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  const [ title, setTitle ] = useState('')
+  const [ title, setTitle ] = useState('Loading...')
   const [ articles, setArticles ] = useState([])
 
   const location = useLocation()
@@ -119,23 +119,27 @@ export default function Newsletter(): JSX.Element {
               }
             </div>
 
-            <div className={styles.publicationArticlesNav}>
-              <Heading as="h2">
-                Contents
-              </Heading>
+            {
+              articles.length ? (
+                <div className={styles.publicationArticlesNav}>
+                  <Heading as="h2">
+                    Contents
+                  </Heading>
 
-              <ul>
-              {
-                articles.map(item => (
-                  <li key={item.id}>
-                    <Link to={`#${item.id}`} >
-                      {item.title}
-                    </Link>
-                  </li>
-                ))
-              }
-              </ul>
-            </div>
+                  <ul>
+                  {
+                    articles.map(item => (
+                      <li key={item.id}>
+                        <Link to={`#${item.id}`} >
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))
+                  }
+                  </ul>
+                </div>
+              ) : null
+            }
           </main>
         </div>
       ) : null }
