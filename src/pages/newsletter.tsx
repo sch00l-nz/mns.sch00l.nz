@@ -52,8 +52,8 @@ export default function Newsletter(): JSX.Element {
   const location = useLocation()
   const id = new URLSearchParams(location.search).get("id")
 
-  if (id) {
-    useEffect(() => {
+  useEffect(() => {
+    if (id) {
       getArticles(id)
         .then((json: any) => {
           setTitle(newsletters.find(n => n.id === id)?.title)
@@ -63,8 +63,8 @@ export default function Newsletter(): JSX.Element {
           console.log('ERROR fetching', err)
           // TODO: display some error message?
         })
-    })
-  }
+    }
+  })
 
   // TODO: see if there is a way to get all the publications from API
 

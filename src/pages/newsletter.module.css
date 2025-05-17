@@ -19,9 +19,9 @@
   padding-top: 0;
 
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   justify-content: space-between;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
 }
 .publicationContainer {
   min-height: 200px;
@@ -29,10 +29,12 @@
 
   display: grid;
   grid-gap: 2rem;
+
+  margin-bottom: 80vh;
 }
 
 .publicationArticlesNav {
-  top: 60px;
+  top: calc(60px + 1rem);
   position: sticky;
 
   min-width: 200px;
