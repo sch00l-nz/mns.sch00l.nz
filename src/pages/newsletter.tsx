@@ -35,7 +35,7 @@ const newsletters = [
   }
 ];
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = false // process.env.NODE_ENV === 'development'
 
 async function getArticles (id: string) {
   if (isDev) return Promise.resolve(newsletterData)
