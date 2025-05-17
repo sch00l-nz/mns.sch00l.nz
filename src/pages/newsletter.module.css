@@ -50,6 +50,11 @@
   align-content: start;
   align-self: start;
 
+  h2 {
+    margin-top: .8rem;
+    margin-bottom: .5rem;
+  }
+
   ul {
     padding-left: calc(var(--ifm-list-left-padding) * 0.5);
 
