@@ -3,14 +3,37 @@ import React, { useState } from 'react'
 import {useLocation} from '@docusaurus/router';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
+// import Heading from "@theme/Heading"; // Heading is not used
 // import LocalLogo from "@site/src/components/LocalLogo";
-// import Link from "@docusaurus/Link";
+import Link from "@docusaurus/Link";
 
 import NewsletterArticleCard from "@site/src/components/NewsletterArticleCard";
 
 import styles from "./newsletter.module.css";
 
+const newsletters = [
+  {
+    id: "Won0dtG",
+    title: "Rimu Newsletter Term 2 2025",
+    year: 2025,
+    term: 2,
+    syndicate: "Rimu"
+  },
+  {
+    id: "zU7DGlI",
+    title: "Kōwhai Term 2 Newsletter 2025",
+    year: 2025,
+    term: 2,
+    syndicate: "Kōwhai"
+  },
+  {
+    id: "Lt7euHu",
+    title: "Pōhutukawa Newsletter Term 2 2025",
+    year: 2025,
+    term: 2,
+    syndicate: "Pōhutukawa"
+  }
+];
 
 export default function Newsletter(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
@@ -19,19 +42,18 @@ export default function Newsletter(): JSX.Element {
   const location = useLocation()
   const id = new URLSearchParams(location.search).get("id")
 
-  // https://hail.to/api/v1/publications/Won0dtG/articles
-  // fetch(
-  //   `https://hail.to/api/v1/publications/${id}/articles`
-  // )
-  //   .then(res => res.json())
-  Promise.resolve(articlesData)
-    .then(json => new Promise((resolve) => setTimeout(resolve, 500, json))) // HACK to wait for mounted
-    .then((json: any) => {
-      setArticles(json)
-    })
-    .catch(err => {
-      console.log('ERROR fetching', err)
-    })
+  if (id) {
+    fetch(
+      `https://hail.to/api/v1/publications/${id}/articles`
+    )
+      .then(res => res.json())
+      .then((json: any) => {
+        setArticles(json)
+      })
+      .catch(err => {
+        console.log('ERROR fetching', err)
+      })
+  }
 
   return (
     <Layout
@@ -41,16 +63,33 @@ export default function Newsletter(): JSX.Element {
       <h2>Newsletter</h2>
 
       <div id="app" className={styles.app}>
-        <div className={styles.articlesContainer}>
-          {
-            articles.map(item => {
-              return (
-                <NewsletterArticleCard article={item} key={item.id} />
-              )
-            })
-          }
-        </div>
-
+        {id ? (
+          <div className={styles.articlesContainer}>
+            {
+              articles.map(item => {
+                return (
+                  <NewsletterArticleCard article={item} key={item.id} />
+                )
+              })
+            }
+          </div>
+        ) : (
+          <div className={styles.newsletterOptions}>
+            <h3>Please select a newsletter:</h3>
+            <ul>
+              {newsletters.map(newsletter => (
+                <li key={newsletter.id}>
+                  <Link
+                    className="button button--secondary button--lg"
+                    to={`/newsletter?id=${newsletter.id}`}
+                  >
+                    {newsletter.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className={styles.content}>
         </div>
       </div>
@@ -71,10 +110,6 @@ export default function Newsletter(): JSX.Element {
 //
 //    />
 //  </div>
-
-const articlesData = [
-  {
-    "id": "91aP625",
     "title": "Dates for your Diary ...",
     "author": "Belinda Campbell",
     "show_author": true,
