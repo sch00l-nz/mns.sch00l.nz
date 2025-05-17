@@ -15,8 +15,6 @@ export default function NewsletterArticleCard ({ article }: any): JSX.Element {
     body,
   } = article
 
-  console.log(hero_image)
-
   return (
     <section className={styles.articleCard}>
       <div className="container">

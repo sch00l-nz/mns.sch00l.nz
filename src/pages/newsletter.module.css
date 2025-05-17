@@ -1,31 +1,50 @@
-.app {
+.container {
   max-width: 1200px;
   padding: 1rem;
   margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-gap: 1rem;
-  /* align-items: start; */
 }
 
-.articlesContainer {
+.newsletterOptions {
+  margin: 1rem 0;
+  display: grid;
+  justify-items: start;
+  grid-gap: 1rem;
+}
+
+.newsletterView {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-content: space-between;
+  grid-gap: 1rem;
+}
+
+.publicationContainer {
+  min-height: 200px;
+  max-width: 800px;
+
   display: grid;
   grid-gap: 2rem;
-  min-height: 200px;
 }
 
-.contents {
+.publicationArticlesNav {
+  top: 60px;
+  position: sticky;
+
   min-width: 200px;
   max-width: 300px;
   min-height: 200px;
 
+  padding: 6px;
+  background: white;
+  border: 1px solid #ccc;
+
+  display: grid;
+  align-content: start;
+  align-self: start;
+
   .nav-card {
     padding: 1rem;
     background: white;
-
-    position: sticky;
-    top: 1rem;
   }
 
 }
