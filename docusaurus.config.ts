@@ -88,7 +88,7 @@ const config: Config = {
         },
         {
           label: "Contribute",
-          to: "/contribute",
+          to: "/info/contribute",
         },
         {
           label: "Apps",
@@ -137,7 +137,7 @@ const config: Config = {
             },
             {
               label: "Contribute",
-              to: "/contribute",
+              to: "/info/contribute",
             },
             {
               label: "Apps",
