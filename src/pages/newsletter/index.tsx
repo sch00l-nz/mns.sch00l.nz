@@ -7,14 +7,12 @@ import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 
 import NewsletterArticleCard from "@site/src/components/NewsletterArticleCard";
-import newsletterData from '../../data/articles/WonOdtG'
-
-import styles from "./newsletter.module.css";
 
 import newsletters from "./newsletter.data.js"
+import newsletterData from '../../data/articles/WonOdtG'
+import styles from "./newsletter.module.css";
 
 const isDev = false // process.env.NODE_ENV === 'development'
-
 async function getArticles (id: string) {
   if (isDev) return Promise.resolve(newsletterData)
 
