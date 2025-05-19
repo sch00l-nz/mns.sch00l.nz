@@ -1,5 +1,6 @@
 ---
 title: Road Patrol
+hide_table_of_contents: true
 ---
 
 # Road Patrol
