@@ -29,22 +29,31 @@ export default function NewsletterShow({ id }: NewsletterShowProps): JSX.Element
       setArticles([]);
 
       getArticles(id)
-        .then((json: any[]) => { // Assuming json is an array of articles
-          const processedArticles = json.map(article => {
-            // Ensure article and article.body exist and article.body is a string
-            if (article && typeof article.body === 'string') {
-              const regex = /https:\/\/hail\.to\/miramar-north-school\/publication\/(\w+)\/article\/(\w+)/g;
-              const newBody = article.body.replace(regex, (match, linkPublicationId, linkArticleId) => {
-                if (linkPublicationId === id) { // 'id' is the current page's publication ID (prop)
-                  return `#${linkArticleId}`; // Replace with a local anchor link
-                }
-                return match; // If publication ID doesn't match, keep the original link
-              });
-              return { ...article, body: newBody };
-            }
-            return article; // Return article unchanged if body is not a string or article is malformed
-          });
+        .then((json: any[]) => {
           setTitle(newsletters.find(n => n.id === id)?.title || 'Newsletter');
+
+          const publicationArticleRegex = /https:\/\/hail\.to\/miramar-north-school\/publication\/(\w+)\/article\/(\w+)/g;
+          const articleRegex = /https:\/\/hail\.to\/miramar-north-school\/article\/(\w+)/g;
+          const processedArticles = json
+            .map(article => {
+              if (typeof article?.body !== 'string') return article
+
+              const newBody = article.body
+                .replace(publicationArticleRegex, (match, publicationId, articleId) => {
+                  const isPublicationArticle = publicationId === id
+                  // if it's an article in same publication, swap for local link
+                  return isPublicationArticle ? `#${articleId}` : match
+                })
+                .replace(articleRegex, (match, articleId) => {
+                  const isPublicationArticle = json.find(article => article.id === articleId)
+                  // if it's an article in same publication, swap for local link
+                  return isPublicationArticle ? `#${articleId}` : match
+                })
+              return {
+                ...article,
+                body: newBody
+              };
+            })
           setArticles(processedArticles);
         })
         .catch(err => {
