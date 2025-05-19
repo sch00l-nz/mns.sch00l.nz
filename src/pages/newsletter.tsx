@@ -5,7 +5,6 @@ import Layout from "@theme/Layout";
 
 import NewsletterIndex from "@site/src/components/NewsletterIndex";
 import NewsletterShow from "@site/src/components/NewsletterShow";
-// import styles from "./newsletter.module.css"; // styles are used by children
 
 const newsletters = [
   {

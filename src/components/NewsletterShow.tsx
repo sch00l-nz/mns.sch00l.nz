@@ -4,7 +4,7 @@ import Link from "@docusaurus/Link";
 import NewsletterArticleCard from "@site/src/components/NewsletterArticleCard";
 
 import newsletterData from '../data/articles/WonOdtG'; // For dev
-import styles from "../pages/newsletter/newsletter.module.css";
+import styles from "./newsletter.module.css";
 
 const MONTH_NAMES_ORDERED = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
