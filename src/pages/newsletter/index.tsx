@@ -3,8 +3,8 @@ import {useLocation} from '@docusaurus/router';
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
-import NewsletterIndex from "./NewsletterIndex";
-import NewsletterShow from "./NewsletterShow";
+import NewsletterIndex from "@site/src/components/NewsletterIndex";
+import NewsletterShow from "@site/src/components/NewsletterShow";
 // import styles from "./newsletter.module.css"; // styles are used by children
 
 const newsletters = [
