@@ -17,7 +17,11 @@ export default function NewsletterPage(): JSX.Element {
       title={`Newsletter - ${siteConfig.title}`}
       description="A community run site supporting Miramar North School"
     >
-      {id ? <NewsletterShow id={id} /> : <NewsletterIndex />}
+      {
+        id
+        ? <NewsletterShow id={id} />
+        : <NewsletterIndex />
+      }
     </Layout>
   );
 }
