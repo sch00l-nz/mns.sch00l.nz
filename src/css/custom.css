@@ -44,14 +44,14 @@ h2 {
 a {
   text-decoration: underline;
   text-decoration-color: #cccccc; /* light grey */
+  
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+
+  /* Remove underline from links within buttons */
+  &.button {
+    text-decoration: none;
+  }
 }
 
-a:hover {
-  text-decoration-color: currentColor;
-}
-
-/* Remove underline from links within buttons */
-.button a,
-.button a:hover {
-  text-decoration: none;
-}
