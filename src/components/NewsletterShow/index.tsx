@@ -3,8 +3,8 @@ import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 import NewsletterArticleCard from "@site/src/components/NewsletterArticleCard";
 
-import newsletterData from '../data/articles/WonOdtG'; // For dev
-import styles from "./newsletter.module.css";
+import newsletterData from '../../data/articles/WonOdtG'; // For dev
+import styles from "./styles.module.scss";
 
 const MONTH_NAMES_ORDERED = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -160,7 +160,7 @@ export default function NewsletterShow({ newsletters, id }: NewsletterShowProps)
 
   return (
     // NOTE: .newsletter-app is used by a plugin
-    <div className={`newsletter-app ${styles.container} ${styles.bgGrey}`}>
+    <div className={`newsletter-app ${styles.container}`}>
       <header>
         <Heading as="h1">
           {title}

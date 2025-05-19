@@ -45,7 +45,7 @@ const config: Config = {
         //   editUrl: "https://github.com/sch00l-nz/mns.sch00l.nz/tree/main/",
         // },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: "./src/css/custom.scss",
         },
       } satisfies Preset.Options,
     ],
@@ -61,7 +61,8 @@ const config: Config = {
         editUrl: "https://github.com/sch00l-nz/mns.sch00l.nz/tree/main/",
       },
     ],
-    require.resolve('docusaurus-plugin-image-zoom')
+    'docusaurus-plugin-sass',
+    'docusaurus-plugin-image-zoom'
   ],
 
   themeConfig: {

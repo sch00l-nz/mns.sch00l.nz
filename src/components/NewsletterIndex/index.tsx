@@ -2,7 +2,7 @@ import React from 'react';
 import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 
-import styles from "./newsletter.module.css";
+import styles from "./styles.module.scss";
 
 interface Newsletter {
   id: string;

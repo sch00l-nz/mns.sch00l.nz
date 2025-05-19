@@ -1,0 +1,33 @@
+.container {
+  padding: 1rem;
+
+  display: grid;
+  justify-content: center;
+}
+
+/* Newsletter Index */
+
+.newsletterOptions {
+  margin: 1rem 0;
+  display: grid;
+  justify-items: start;
+  grid-gap: 1rem;
+}
+
+.yearGroup {
+  margin-bottom: 2rem;
+  
+  h2 {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.termGroup {
+  margin-bottom: 1.5rem;
+}
+
+.syndicateHelper {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
