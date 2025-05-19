@@ -7,6 +7,73 @@ import newsletters from "./newsletter.data.js";
 import newsletterData from '../../data/articles/WonOdtG'; // For dev
 import styles from "./newsletter.module.css";
 
+const MONTH_NAMES_ORDERED = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+function formatBodyIfDateList(body: string): string | null {
+  const lines = body.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+
+  if (lines.length === 0) {
+    return null;
+  }
+
+  const dateEvents: Array<{ month: string, text: string }> = [];
+  const linePattern = new RegExp(
+    `^\\s*(?:(?:Mon|Tues|Wed(?:nes)?|Thu(?:rs)?|Fri|Sat(?:ur)?|Sun)(?:day)?\\s+)?` + // Optional day of week
+    `(\\d{1,2})(?:st|nd|rd|th)?\\s+` + // Date (e.g., 28th)
+    `(January|February|March|April|May|June|July|August|September|October|November|December)` + // Month (captured)
+    `(?::)?\\s*(.*)$`, // Optional colon, then the rest of the event description
+    'i' // Case-insensitive
+  );
+
+  for (const line of lines) {
+    const match = line.match(linePattern);
+    if (!match) {
+      return null; // Not a pure date list article
+    }
+    // match[1] is date number, match[2] is month, match[3] is event description
+    dateEvents.push({ month: match[2], text: line });
+  }
+
+  const groupedByMonth: { [month: string]: string[] } = {};
+  const uniqueMonthsInOrder = [...new Set(dateEvents.map(de => de.month))];
+
+  uniqueMonthsInOrder.sort((a, b) => {
+    const indexA = MONTH_NAMES_ORDERED.findIndex(m => new RegExp(`^${m}$`, 'i').test(a));
+    const indexB = MONTH_NAMES_ORDERED.findIndex(m => new RegExp(`^${m}$`, 'i').test(b));
+    return indexA - indexB;
+  });
+  
+  for (const month of uniqueMonthsInOrder) {
+    // Ensure the key in groupedByMonth uses the canonical casing from MONTH_NAMES_ORDERED if possible,
+    // or at least consistent casing from uniqueMonthsInOrder.
+    const canonicalMonth = MONTH_NAMES_ORDERED.find(m => new RegExp(`^${month}$`, 'i').test(m)) || month;
+    groupedByMonth[canonicalMonth] = [];
+  }
+
+  for (const de of dateEvents) {
+    const canonicalMonth = MONTH_NAMES_ORDERED.find(m => new RegExp(`^${de.month}$`, 'i').test(m)) || de.month;
+    if (groupedByMonth[canonicalMonth]) {
+         groupedByMonth[canonicalMonth].push(de.text);
+    }
+  }
+
+  let htmlOutput = '';
+  for (const month of uniqueMonthsInOrder) {
+    // Retrieve using the possibly case-varied month from uniqueMonthsInOrder, then find its canonical form for lookup
+    const canonicalMonthKey = MONTH_NAMES_ORDERED.find(m => new RegExp(`^${month}$`, 'i').test(m)) || month;
+    if (groupedByMonth[canonicalMonthKey] && groupedByMonth[canonicalMonthKey].length > 0) {
+      htmlOutput += `<h3>${canonicalMonthKey}</h3>\n`;
+      htmlOutput += '<ul>\n';
+      groupedByMonth[canonicalMonthKey].forEach(eventText => {
+        htmlOutput += `  <li>${eventText}</li>\n`;
+      });
+      htmlOutput += '</ul>\n';
+    }
+  }
+
+  return htmlOutput;
+}
+
 const isDev = false // process.env.NODE_ENV === 'development'
 async function getArticles (id: string) {
   if (isDev) return Promise.resolve(newsletterData)
@@ -36,24 +103,32 @@ export default function NewsletterShow({ id }: NewsletterShowProps): JSX.Element
           const articleRegex = /https:\/\/hail\.to\/miramar-north-school\/article\/(\w+)/g;
           const processedArticles = json
             .map(article => {
-              if (typeof article?.body !== 'string') return article
+              if (typeof article?.body !== 'string') return article;
 
-              const newBody = article.body
+              let newBody = article.body;
+
+              // 1. Link replacements
+              newBody = newBody
                 .replace(publicationArticleRegex, (match, publicationId, articleId) => {
-                  const isPublicationArticle = publicationId === id
-                  // if it's an article in same publication, swap for local link
-                  return isPublicationArticle ? `#${articleId}` : match
+                  const isPublicationArticle = publicationId === id;
+                  return isPublicationArticle ? `#${articleId}` : match;
                 })
                 .replace(articleRegex, (match, articleId) => {
-                  const isPublicationArticle = json.find(article => article.id === articleId)
-                  // if it's an article in same publication, swap for local link
-                  return isPublicationArticle ? `#${articleId}` : match
-                })
+                  const isPublicationArticle = json.find(art => art.id === articleId);
+                  return isPublicationArticle ? `#${articleId}` : match;
+                });
+
+              // 2. Date list formatting
+              const formattedDateListHtml = formatBodyIfDateList(newBody);
+              if (formattedDateListHtml) {
+                newBody = formattedDateListHtml;
+              }
+
               return {
                 ...article,
                 body: newBody
               };
-            })
+            });
           setArticles(processedArticles);
         })
         .catch(err => {
