@@ -1,5 +1,6 @@
 ---
 title: Reading Help
+hide_table_of_contents: true
 ---
 
 # Reading Help

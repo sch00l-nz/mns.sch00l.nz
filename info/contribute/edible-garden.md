@@ -1,5 +1,6 @@
 ---
 title: Edible Garden
+hide_table_of_contents: true
 ---
 
 # Edible Garden
