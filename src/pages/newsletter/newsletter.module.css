@@ -20,11 +20,19 @@
 
 .yearGroup {
   margin-bottom: 2rem;
+  
+  h2 {
+    border-bottom: 1px solid #ddd;
+  }
 }
 
 .termGroup {
   margin-bottom: 1.5rem;
-  padding-left: 1rem; /* Optional: to indent term groups under year */
+}
+
+.syndicateHelper {
+  font-size: 12px;
+  opacity: 0.6;
 }
 
 /* Newsletter View */
