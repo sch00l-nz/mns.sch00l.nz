@@ -18,6 +18,15 @@
   grid-gap: 1rem;
 }
 
+.yearGroup {
+  margin-bottom: 2rem;
+}
+
+.termGroup {
+  margin-bottom: 1.5rem;
+  padding-left: 1rem; /* Optional: to indent term groups under year */
+}
+
 /* Newsletter View */
 
 .newsletterView {
