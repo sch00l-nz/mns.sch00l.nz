@@ -10,28 +10,39 @@ import styles from "./newsletter.module.css";
 const MONTH_NAMES_ORDERED = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 function formatBodyIfDateList(body: string): string | null {
-  const lines = body.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+  const lines = body.split('\n\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0);
 
   if (lines.length === 0) {
     return null;
   }
 
-  const dateEvents: Array<{ month: string, text: string }> = [];
+  const dateEvents = []
+  const otherLines = []
   const linePattern = new RegExp(
-    `^\\s*(?:(?:Mon|Tues|Wed(?:nes)?|Thu(?:rs)?|Fri|Sat(?:ur)?|Sun)(?:day)?\\s+)?` + // Optional day of week
-    `(\\d{1,2})(?:st|nd|rd|th)?\\s+` + // Date (e.g., 28th)
+    '^<p>' +
+    `\\s*((?:Mon|Tues|Wed(?:nes)?|Thu(?:rs)?|Fri|Sat(?:ur)?|Sun)(?:day)?\\s+)?` + // Optional day of week
+    `(\\d{1,2})(st|nd|rd|th)?\\s+` + // Date (e.g., 28th)
     `(January|February|March|April|May|June|July|August|September|October|November|December)` + // Month (captured)
-    `(?::)?\\s*(.*)$`, // Optional colon, then the rest of the event description
+    `(?::)?\\s*(.*)` + // Optional colon, then the rest of the event description
+    '<\/p>$',
     'i' // Case-insensitive
   );
 
   for (const line of lines) {
     const match = line.match(linePattern);
-    if (!match) {
-      return null; // Not a pure date list article
+    if (match === null) {
+      otherLines.push(line)
     }
-    // match[1] is date number, match[2] is month, match[3] is event description
-    dateEvents.push({ month: match[2], text: line });
+    else {
+      // match[2] is date number, match[4] is month, match[5] is event description
+      dateEvents.push({
+        month: match[4],
+        // text: line
+        text: `<span class="date">${match[2]}${match[3]}</span> <span class="day">${match[1]}</span> : ${match[5]}`
+      });
+    }
   }
 
   const groupedByMonth: { [month: string]: string[] } = {};
@@ -69,6 +80,14 @@ function formatBodyIfDateList(body: string): string | null {
       });
       htmlOutput += '</ul>\n';
     }
+  }
+
+  if (dateEvents.length && otherLines.length) {
+    htmlOutput += '<p>'
+    otherLines.forEach(line => {
+      htmlOutput += line
+    })
+    htmlOutput += '</p>'
   }
 
   return htmlOutput;

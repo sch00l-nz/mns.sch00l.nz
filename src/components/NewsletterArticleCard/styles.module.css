@@ -102,4 +102,15 @@
   }
 
   margin-bottom: 1rem;
+
+  /* hack for the dates */
+  ul li span:first-child {
+    font-weight: 600;
+    min-width: 2.5rem;
+    display: inline-block;
+  }
+  ul li span:last-child {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
 }
