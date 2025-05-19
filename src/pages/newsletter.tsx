@@ -11,29 +11,7 @@ import newsletterData from '../data/articles/WonOdtG'
 
 import styles from "./newsletter.module.css";
 
-const newsletters = [
-  {
-    id: "Won0dtG",
-    title: "Rimu Newsletter Term 2 2025",
-    year: 2025,
-    term: 2,
-    syndicate: "Rimu"
-  },
-  {
-    id: "zU7DGlI",
-    title: "Kōwhai Term 2 Newsletter 2025",
-    year: 2025,
-    term: 2,
-    syndicate: "Kōwhai"
-  },
-  {
-    id: "Lt7euHu",
-    title: "Pōhutukawa Newsletter Term 2 2025",
-    year: 2025,
-    term: 2,
-    syndicate: "Pōhutukawa"
-  }
-];
+import newsletters from "./newsletter.data.js"
 
 const isDev = false // process.env.NODE_ENV === 'development'
 
@@ -106,7 +84,7 @@ export default function Newsletter(): JSX.Element {
       {/* Show 1 Newsletter */}
       {/* NOTE: .newsletter-app is used by a plugin */}
       { id ? (
-        <div className={`newsletter-app ${styles.container}`}>
+        <div className={`newsletter-app ${styles.container} ${styles.bgGrey}`}>
           <header>
             <Heading as="h1">
               { title }

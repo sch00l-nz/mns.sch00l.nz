@@ -1,9 +1,12 @@
 .container {
-  background: #eee;
   padding: 1rem;
 
   display: grid;
   justify-content: center;
+}
+
+.bgGrey {
+  background: #eee;
 }
 
 /* Newsletter Index */
