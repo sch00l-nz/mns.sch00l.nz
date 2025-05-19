@@ -3,7 +3,6 @@ import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 import NewsletterArticleCard from "@site/src/components/NewsletterArticleCard";
 
-import newsletters from "./newsletter.data.js";
 import newsletterData from '../../data/articles/WonOdtG'; // For dev
 import styles from "./newsletter.module.css";
 
@@ -40,7 +39,7 @@ function formatBodyIfDateList(body: string): string | null {
       dateEvents.push({
         month: match[4],
         // text: line
-        text: `<span class="date">${match[2]}${match[3]}</span> <span class="day">${match[1]}</span> : ${match[5]}`
+        text: `${match[2]}${match[3]}</span> : ${match[5]}`
       });
     }
   }
@@ -102,10 +101,11 @@ async function getArticles (id: string) {
 }
 
 interface NewsletterShowProps {
+  newsletters: Array<any>,
   id: string;
 }
 
-export default function NewsletterShow({ id }: NewsletterShowProps): JSX.Element {
+export default function NewsletterShow({ newsletters, id }: NewsletterShowProps): JSX.Element {
   const [title, setTitle] = useState('Loading...');
   const [articles, setArticles] = useState([]);
 

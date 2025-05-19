@@ -7,6 +7,38 @@ import NewsletterIndex from "./NewsletterIndex";
 import NewsletterShow from "./NewsletterShow";
 // import styles from "./newsletter.module.css"; // styles are used by children
 
+const newsletters = [
+  {
+    id: "QaY8g7T",
+    title: "May Newsletter 2025",
+    year: 2025,
+    month: "May",
+    term: 2,
+    syndicate: null
+  },
+  {
+    id: "Won0dtG",
+    title: "Rimu Newsletter Term 2 2025",
+    year: 2025,
+    term: 2,
+    syndicate: "Rimu"
+  },
+  {
+    id: "zU7DGlI",
+    title: "Kōwhai Term 2 Newsletter 2025",
+    year: 2025,
+    term: 2,
+    syndicate: "Kōwhai"
+  },
+  {
+    id: "Lt7euHu",
+    title: "Pōhutukawa Newsletter Term 2 2025",
+    year: 2025,
+    term: 2,
+    syndicate: "Pōhutukawa"
+  }
+];
+
 export default function NewsletterPage(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   const location = useLocation();
@@ -19,8 +51,8 @@ export default function NewsletterPage(): JSX.Element {
     >
       {
         id
-        ? <NewsletterShow id={id} />
-        : <NewsletterIndex />
+        ? <NewsletterShow newsletters={newsletters} id={id} />
+        : <NewsletterIndex newsletters={newsletters} />
       }
     </Layout>
   );

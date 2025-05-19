@@ -2,7 +2,6 @@ import React from 'react';
 import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 
-import newsletters from "./newsletter.data.js";
 import styles from "./newsletter.module.css";
 
 interface Newsletter {
@@ -20,9 +19,11 @@ interface GroupedNewsletters {
   };
 }
 
-interface NewsletterIndexProps {}
+interface NewsletterIndexProps {
+  newsletters: Array<any>
+}
 
-export default function NewsletterIndex({}: NewsletterIndexProps): JSX.Element {
+export default function NewsletterIndex({ newsletters }: NewsletterIndexProps): JSX.Element {
   const groupedNewsletters = newsletters.reduce((acc: GroupedNewsletters, newsletter: Newsletter) => {
     const { year, term } = newsletter
     if (!acc[year])       acc[year] = {}
