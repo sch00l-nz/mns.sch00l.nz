@@ -7,7 +7,7 @@ import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 
 import NewsletterArticleCard from "@site/src/components/NewsletterArticleCard";
-import newsletterData from '../data/articles/WonOdtG'
+import newsletterData from '../../data/articles/WonOdtG'
 
 import styles from "./newsletter.module.css";
 
