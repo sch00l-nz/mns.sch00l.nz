@@ -29,9 +29,23 @@ export default function NewsletterShow({ id }: NewsletterShowProps): JSX.Element
       setArticles([]);
 
       getArticles(id)
-        .then((json: any) => {
+        .then((json: any[]) => { // Assuming json is an array of articles
+          const processedArticles = json.map(article => {
+            // Ensure article and article.body exist and article.body is a string
+            if (article && typeof article.body === 'string') {
+              const regex = /https:\/\/hail\.to\/miramar-north-school\/publication\/(\w+)\/article\/(\w+)/g;
+              const newBody = article.body.replace(regex, (match, linkPublicationId, linkArticleId) => {
+                if (linkPublicationId === id) { // 'id' is the current page's publication ID (prop)
+                  return `#${linkArticleId}`; // Replace with a local anchor link
+                }
+                return match; // If publication ID doesn't match, keep the original link
+              });
+              return { ...article, body: newBody };
+            }
+            return article; // Return article unchanged if body is not a string or article is malformed
+          });
           setTitle(newsletters.find(n => n.id === id)?.title || 'Newsletter');
-          setArticles(json);
+          setArticles(processedArticles);
         })
         .catch(err => {
           console.log('ERROR fetching', err);
