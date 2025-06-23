@@ -8,6 +8,14 @@ import NewsletterShow from "@site/src/components/NewsletterShow";
 
 const newsletters = [
   {
+    id: "0Mo7nCW",
+    title: "June Newsletter 2025",
+    year: 2025,
+    month: "June",
+    term: 2,
+    syndicate: null
+  },
+  {
     id: "QaY8g7T",
     title: "May Newsletter 2025",
     year: 2025,
