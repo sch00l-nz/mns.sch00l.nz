@@ -13,11 +13,7 @@ And all of that is me
 
 Ahakoa pāmamao
 Kei kōnei koe
-```
 
-## English translation
-
-```
 Though you are far away
 I hold you near
 
